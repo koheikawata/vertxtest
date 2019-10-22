@@ -20,51 +20,14 @@
       <version>3.8.3</version>
     </dependency>
 
-    <!-- Add hazelcast deps if you want it clusterable -->
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-hazelcast</artifactId>
-      <version>3.8.3</version>
-    </dependency>
-
-    <dependency>
-        <groupId>io.vertx</groupId>
-        <artifactId>vertx-web</artifactId>
-        <version>3.8.3</version>
-    </dependency>
- 
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>1.7.6</version>
-    </dependency>
-  </dependencies>
+    </dependencies>
   <build>
     <defaultGoal>install</defaultGoal>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.6.1</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.6.0</version>
-        <executions>
-            <execution>
-                <goals>
-                    <goal>java</goal>
-                </goals>
-            </execution>
-        </executions>
-        <configuration>
-            <mainClass>com.koheikawata.test1</mainClass>
-        </configuration>
       </plugin>
     </plugins>
   </build>
