@@ -31,7 +31,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.6.0</version>
         <configuration>
-            <mainClass>test1</mainClass>
+            <mainClass>com.koheikawata.test1</mainClass>
         </configuration>
       </plugin>
     </plugins>
