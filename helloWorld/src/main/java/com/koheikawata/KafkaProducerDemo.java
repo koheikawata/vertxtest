@@ -26,6 +26,8 @@ public class KafkaProducerDemo
             // only topic and message value are specified, round robin on destination partitions
             KafkaProducerRecord<String, String> record =
                 KafkaProducerRecord.create("testkoheikafka", "message_" + i);
+            
+            System.out.println( "message sent" + i );
 
             producer.write(record);
         }
