@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import io.vertx.core.Vertx;
 
-public class App2
+public class KafkaProducerDemo
 {
     public static void main( String[] args )
     {
@@ -15,7 +15,7 @@ public class App2
         Vertx vertx = Vertx.vertx();
 
         Map<String, String> config = new HashMap<>();
-        config.put("bootstrap.servers", "localhost:9092");
+        config.put("bootstrap.servers", "testkoheieventhubs.servicebus.windows.net:9093");
         config.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         config.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         config.put("acks", "1");
@@ -31,4 +31,5 @@ public class App2
             producer.write(record);
         }
     }
+
 }
