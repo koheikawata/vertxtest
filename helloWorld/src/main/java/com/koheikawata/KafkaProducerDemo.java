@@ -30,7 +30,7 @@ public class KafkaProducerDemo
             producer.write(record);
         }
 
-        producer.partitionsFor("testkoheikafka", ar -> {
+/*        producer.partitionsFor("testkoheikafka", ar -> {
             if (ar.succeeded()) {
 
                 for (PartitionInfo partitionInfo : ar.result()) {
@@ -38,5 +38,6 @@ public class KafkaProducerDemo
                 }
             }
         });
+*/
     }
 }
