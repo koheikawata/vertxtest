@@ -13,7 +13,6 @@ public class KafkaProducerDemo
         System.out.println( "Hello World!" );
 
         Vertx vertx = Vertx.vertx();
-
         Map<String, String> config = new HashMap<>();
         config.put("bootstrap.servers", "testkoheieventhubs.servicebus.windows.net:9093");
         config.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
@@ -26,10 +25,18 @@ public class KafkaProducerDemo
         for (int i = 0; i < 5; i++) {
             // only topic and message value are specified, round robin on destination partitions
             KafkaProducerRecord<String, String> record =
-                KafkaProducerRecord.create("test", "message_" + i);
+                KafkaProducerRecord.create("testkoheikafka", "message_" + i);
 
             producer.write(record);
         }
-    }
 
+        producer.partitionsFor("testkoheikafka", ar -> {
+            if (ar.succeeded()) {
+
+                for (PartitionInfo partitionInfo : ar.result()) {
+                    System.out.println(partitionInfo);
+                }
+            }
+        });
+    }
 }
