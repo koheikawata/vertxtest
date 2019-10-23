@@ -18,7 +18,7 @@ public class KafkaProducerDemo
         config.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         config.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         config.put("acks", "1");
-        config.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://testkoheieventhubs.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=V7yKG8ubEYifLgJpan6we7DqK9Sse5RcBH5cPQtTuR4="");
+//        config.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://testkoheieventhubs.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=V7yKG8ubEYifLgJpan6we7DqK9Sse5RcBH5cPQtTuR4="");
 
         // use producer for interacting with Apache Kafka
         KafkaProducer<String, String> producer = KafkaProducer.create(vertx, config);
