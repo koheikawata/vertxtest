@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import io.vertx.core.Vertx;
 
-public class App 
+public class App2
 {
     public static void main( String[] args )
     {
