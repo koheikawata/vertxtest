@@ -18,21 +18,17 @@ public class KafkaProducerDemo
         config.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         config.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         config.put("acks", "1");
+        config.put("security.protocol", "SASL_SSL");
+        config.put("sasl.mechanism", "PLAIN");
         config.put("sasl.jaas.config", "org.apache.kafka.common.security.scram.ScramLoginModule required username=\"$ConnectionString\" password=\"Endpoint=sb://testkoheieventhubs.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=V7yKG8ubEYifLgJpan6we7DqK9Sse5RcBH5cPQtTuR4=\"");
 
-// Endpoint=sb://testkoheieventhubs.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=V7yKG8ubEYifLgJpan6we7DqK9Sse5RcBH5cPQtTuR4=
-
-        // use producer for interacting with Apache Kafka
         KafkaProducer<String, String> producer = KafkaProducer.create(vertx, config);
 
         for (int i = 0; i < 5; i++) {
-            // only topic and message value are specified, round robin on destination partitions
-            KafkaProducerRecord<String, String> record =
-                KafkaProducerRecord.create("testkoheikafka", "message_" + i);
-            
-            System.out.println( "message sent" + i );
-
+            KafkaProducerRecord<String, String> record = KafkaProducerRecord.create("testkoheikafka", "message_" + i);
             producer.write(record);
+
+            System.out.println( "message sent" + i );
         }
 
 /*        producer.partitionsFor("testkoheikafka", ar -> {
