@@ -24,7 +24,7 @@ public class KafkaProducerDemo
 
         KafkaProducer<String, String> producer = KafkaProducer.create(vertx, config);
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 50; i++) {
             KafkaProducerRecord<String, String> record = KafkaProducerRecord.create("testkoheikafka", "message_" + i);
             producer.write(record);
 
