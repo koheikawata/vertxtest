@@ -17,10 +17,10 @@ public class KafkaProducerDemo
         config.put("bootstrap.servers", "testkoheieventhubs.servicebus.windows.net:9093");
         config.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         config.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-//        config.put("acks", "1");
+        config.put("acks", "1");
 //        config.put("security.protocol", "SASL_SSL");
-        config.put("sasl.mechanism", "PLAIN");
-        config.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"$ConnectionString\" password=\"Endpoint=sb://testkoheieventhubs.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=V7yKG8ubEYifLgJpan6we7DqK9Sse5RcBH5cPQtTuR4=\"");
+//        config.put("sasl.mechanism", "PLAIN");
+//        config.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"$ConnectionString\" password=\"Endpoint=sb://testkoheieventhubs.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=V7yKG8ubEYifLgJpan6we7DqK9Sse5RcBH5cPQtTuR4=\"");
 
         KafkaProducer<String, String> producer = KafkaProducer.create(vertx, config);
 
