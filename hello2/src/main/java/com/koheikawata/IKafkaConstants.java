@@ -1,3 +1,5 @@
+package com.koheikawata;
+
 public class IKafkaConstants
 {
     public static String KAFKA_BROKERS = "localhost:9092";
