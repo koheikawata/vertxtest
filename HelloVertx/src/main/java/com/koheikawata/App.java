@@ -17,7 +17,7 @@ public class App
     }
 
     static void runProducer() {
-        Producer<Long, String> producer = ProducerCreator.createProducer();
+        KafkaProducer<String, String> producer = ProducerCreator.createProducer();
         for (int index = 0; index < IKafkaConstants.MESSAGE_COUNT; index++) {
 //            ProducerRecord<Long, String> record = new ProducerRecord<Long, String>(IKafkaConstants.TOPIC_NAME, "This is record " + index);
             KafkaProducerRecord<String, String> record = KafkaProducerRecord.create(IKafkaConstants.TOPIC_NAME, "This is record " + index);

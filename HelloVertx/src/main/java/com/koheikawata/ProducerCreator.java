@@ -8,7 +8,7 @@ import io.vertx.kafka.client.producer.KafkaProducer;
 import com.koheikawata.IKafkaConstants;
 
 public class ProducerCreator {
-    public static Producer<Long, String> createProducer() {
+    public static KafkaProducer<String, String> createProducer() {
         Vertx vertx = Vertx.vertx();
         Map<String, String> config = new HashMap<>();
         config.put("bootstrap.servers", IKafkaConstants.KAFKA_BROKERS);
