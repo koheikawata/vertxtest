@@ -12,7 +12,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        run.Producer();
+        runProducer();
     }
 
     static void runProducer() {
