@@ -23,9 +23,10 @@ public class App
             KafkaProducerRecord<String, String> record = KafkaProducerRecord.create(IKafkaConstants.TOPIC_NAME, "This is record " + index);
 
             try {
-            RecordMetadata metadata = producer.write(record).get();
-                        System.out.println("Record sent with key " + index + " to partition " + metadata.partition()
-                        + " with offset " + metadata.offset());
+//            RecordMetadata metadata = producer.write(record).get();
+                producer.write(record);
+//                        System.out.println("Record sent with key " + index + " to partition " + metadata.partition()
+//                        + " with offset " + metadata.offset());
                  } 
             catch (ExecutionException e) {
                      System.out.println("Error in sending record");
