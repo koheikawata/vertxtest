@@ -4,6 +4,8 @@ import io.vertx.core.Vertx;
 import java.util.HashMap;
 import java.util.Map;
 import io.vertx.kafka.client.producer.KafkaProducer;
+import org.apache.kafka.common.serialization.LongSerializer;
+import org.apache.kafka.common.serialization.StringSerializer;
 
 import com.koheikawata.IKafkaConstants;
 
