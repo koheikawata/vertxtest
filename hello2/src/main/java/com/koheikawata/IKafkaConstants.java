@@ -1,4 +1,4 @@
-public interface IKafkaConstants
+public class IKafkaConstants
 {
     public static String KAFKA_BROKERS = "localhost:9092";
     public static Integer MESSAGE_COUNT=1000;
